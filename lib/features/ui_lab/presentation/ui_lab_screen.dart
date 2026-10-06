@@ -110,25 +110,30 @@ class UiLabScreen extends StatelessWidget {
                     onPressed: () {},
                   ),
                   const SizedBox(height: AppSpacing.md),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CFGhostButton(
-                        label: 'Ghost Link',
-                        icon: PhosphorIcons.arrowRight(PhosphorIconsStyle.bold),
-                        onPressed: () {},
-                      ),
-                      const CFPrimaryButton(
-                        label: 'Disabled',
-                        isDisabled: true,
-                        fullWidth: false,
-                      ),
-                      const CFPrimaryButton(
-                        label: 'Loading',
-                        isLoading: true,
-                        fullWidth: false,
-                      ),
-                    ],
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        CFGhostButton(
+                          label: 'Ghost Link',
+                          icon: PhosphorIcons.arrowRight(PhosphorIconsStyle.bold),
+                          onPressed: () {},
+                        ),
+                        const SizedBox(width: AppSpacing.xs),
+                        const CFPrimaryButton(
+                          label: 'Disabled',
+                          isDisabled: true,
+                          fullWidth: false,
+                        ),
+                        const SizedBox(width: AppSpacing.xs),
+                        const CFPrimaryButton(
+                          label: 'Loading',
+                          isLoading: true,
+                          fullWidth: false,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
